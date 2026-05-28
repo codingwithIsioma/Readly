@@ -1,0 +1,54 @@
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 3rem;
+}
+
+.logo {
+  color: var(--primary-text);
+  font-family: var(--secondary-font);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ======= LANDING PAGE ======== */
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-auth {
+  display: flex;
+  gap: 1rem;
+}
+
+.sign-in-btn {
+  background-color: var(--page-background);
+  font-family: var(--primary-font);
+  font-weight: 500;
+  padding: 0.5rem 1.3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-in-btn:hover {
+  border: 1px solid var(--primary-text);
+}
+
+.sign-up-btn {
+  color: #fff;
+  background-color: var(--primary-text);
+  font-family: var(--primary-font);
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-up-btn:hover {
+    background-color: #000000cc;
+}
