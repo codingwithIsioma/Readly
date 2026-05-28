@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up - Readly</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6a9f6daa92.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="sign-up-nav">
+          <h2 class="logo">Readly</h2>
+          <p class="auth-link">
+            Already have an account? <a href="">Sign in</a>
+          </p>
+        </nav>
+      </header>
+      <main>
+        <div class="hero-section">
+          <div class="sign-up-hero">
+            <h2>Join <span>Readly</span> today.</h2>
+            <p>
+              Create your free account and get access to curated articles across
+              all the topics you care about.
+            </p>
+            <ul>
+              <li>Curated articles updated daily</li>
+              <li>Bookmark and save for later</li>
+              <li>Filter by topics you love</li>
+              <li>Track your reading streak</li>
+            </ul>
+          </div>
+          <div class="sign-up-form">
+            <h3>Create your account</h3>
+            <p class="auth-link">
+              Fill in your details below. Already have one?
+              <a href="">Sign in.</a>
+            </p>
+            <form action="" method="post" id="user-sign-up">
+              <div>
+                <label for="fullname"
+                  >FULL NAME
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="fullname"
+                    placeholder="Anna Krause"
+                    required
+                /></label>
+                <p id="fullname-error" class="error-message">
+                  Must contain at least 2 words.
+                </p>
+              </div>
+              <div>
+                <label for="email"
+                  >EMAIL ADDRESS
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="example@domain.com"
+                    required
+                /></label>
+                <p id="email-error" class="error-message">
+                  Enter a valid email address.
+                </p>
+              </div>
+              <div class="grid">
+                <div>
+                  <label for="password"
+                    >PASSWORD
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Minimum 8 characters"
+                      required
+                  /></label>
+                  <p id="password-error" class="error-message">
+                    Must contain one uppercase letter, one digit, one special
+                    character.
+                  </p>
+                </div>
+                <div>
+                  <label for="confirm-pswrd"
+                    >CONFIRM PASSWORD
+                    <input
+                      type="password"
+                      name="confirm-pswrd"
+                      id="confirm-pswrd"
+                      placeholder="Repeat your password"
+                      required
+                  /></label>
+                  <p id="confirm-error" class="error-message">
+                    Password doesn't match.
+                  </p>
+                </div>
+                <div>
+                  <label for="age"
+                    >AGE
+                    <input
+                      type="number"
+                      name="user-age"
+                      id="age"
+                      min="1"
+                      max="100"
+                      required
+                  /></label>
+                  <p id="age-error" class="error-message">
+                    You must be at least 18.
+                  </p>
+                </div>
+              </div>
+
+              <button type="submit" id="submit-btn">Create Account</button>
+            </form>
+            <div class="success-message">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Account created successfully!</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
