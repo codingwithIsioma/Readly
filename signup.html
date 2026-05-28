@@ -14,10 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/6a9f6daa92.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </head>
   <body>
     <div class="page">
@@ -25,7 +25,7 @@
         <nav class="sign-up-nav">
           <h2 class="logo">Readly</h2>
           <p class="auth-link">
-            Already have an account? <a href="">Sign in</a>
+            Already have an account? <a href="./signin.html">Sign in</a>
           </p>
         </nav>
       </header>
@@ -48,7 +48,7 @@
             <h3>Create your account</h3>
             <p class="auth-link">
               Fill in your details below. Already have one?
-              <a href="">Sign in.</a>
+              <a href="./signin.html">Sign in.</a>
             </p>
             <form action="" method="post" id="user-sign-up">
               <div>
@@ -87,7 +87,7 @@
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="Minimum 8 characters"
+                      placeholder="Min. 8 characters"
                       required
                   /></label>
                   <p id="password-error" class="error-message">
@@ -102,7 +102,7 @@
                       type="password"
                       name="confirm-pswrd"
                       id="confirm-pswrd"
-                      placeholder="Repeat your password"
+                      placeholder="Repeat password"
                       required
                   /></label>
                   <p id="confirm-error" class="error-message">
@@ -118,6 +118,7 @@
                       id="age"
                       min="1"
                       max="100"
+                      placeholder="Must be 18+"
                       required
                   /></label>
                   <p id="age-error" class="error-message">
