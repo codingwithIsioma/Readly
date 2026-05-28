@@ -11,11 +11,15 @@
 }
 
 .logo {
-  color: var(--primary-text);
   font-family: var(--secondary-font);
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+}
+
+.logo a {
+  color: var(--primary-text);
+  text-decoration: none;
 }
 
 /* ======= LANDING PAGE ======== */
