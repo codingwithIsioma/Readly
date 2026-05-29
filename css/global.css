@@ -19,7 +19,11 @@
   --streak-background: #1a1a1a;
   --streak-label: #888888;
   --logo: 1.2rem;
-  --nav-links: 0.82rem;
+  --error-color: #e05555;
+  --error-background: #fff8f8;
+  --success-border: #b6e8cc;
+  --success-background: #f3fcf7;
+  --success-message: #2a7a52;
 }
 
 body {
@@ -33,5 +37,5 @@ body {
 
 main {
   width: 100%;
-  padding: 1.5rem 3rem;
+  min-height: 100%;
 }
