@@ -33,5 +33,5 @@ body {
 
 main {
   width: 100%;
-  padding: 1.5rem 3rem;
+  min-height: 100%;
 }
