@@ -16,7 +16,7 @@
 }
 
 .landing-hero {
-  padding: 0 3rem;
+  padding: 0 4rem;
   border-right: 1px solid var(--border-color);
   height: 100%;
   display: flex;
@@ -46,6 +46,7 @@
 .landing-hero-text h1 span {
   color: var(--muted-text);
   font-style: italic;
+  font-weight: 500;
 }
 
 .landing-subtext {
@@ -65,7 +66,7 @@
 /* =========================================== */
 
 .landing-preview {
-  padding: 0 3rem;
+  padding: 0 4rem;
   background-color: var(--secondary-surface);
   display: flex;
   flex-direction: column;
