@@ -7,8 +7,9 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/signup.css" />
+    <link rel="stylesheet" href="./css/auth.css" />
 
+    <!-- EXTERNAL STYLESHEETS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +20,12 @@
       src="https://kit.fontawesome.com/6a9f6daa92.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- SCRIPTS -->
+    <script src="./js/classes/User.js" defer></script>
+    <script src="./js/classes/StreakTracker.js" defer></script>
+    <script src="./js/signup.js" defer></script>
+    <script src="./js/signin.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -26,13 +33,14 @@
         <nav class="sign-up-nav">
           <h2 class="logo"><a href="./index.html">Readly</a></h2>
           <p class="auth-link">
-            Already have an account? <a href="./signin.html">Sign in</a>
+            Already have an account?
+            <button type="button" class="sign-in-auth">Sign in</button>
           </p>
         </nav>
       </header>
       <main>
         <div class="hero-section">
-          <div class="sign-up-hero">
+          <div class="auth-hero">
             <h2>Join <span>Readly</span> today.</h2>
             <p>
               Create your free account and get access to curated articles across
@@ -45,13 +53,13 @@
               <li>Track your reading streak</li>
             </ul>
           </div>
-          <div class="sign-up-form">
+          <div class="auth-form">
             <h3>Create your account</h3>
             <p class="auth-link">
               Fill in your details below. Already have one?
-              <a href="./signin.html">Sign in.</a>
+              <button type="button" class="sign-in-auth">Sign in.</button>
             </p>
-            <form action="" method="post" id="user-sign-up">
+            <form id="user-sign-up">
               <div class="information">
                 <label for="fullname"
                   >FULL NAME
@@ -82,7 +90,7 @@
               </div>
               <div class="grid">
                 <div>
-                  <label for="password"
+                  <label for="password" class="password-container"
                     >PASSWORD
                     <input
                       type="password"
@@ -90,22 +98,25 @@
                       id="password"
                       placeholder="Min. 8 characters"
                       required
-                  /></label>
+                    />
+                    <i class="fa-regular fa-eye" id="togglePassword"></i>
+                  </label>
                   <p id="password-error" class="error-message">
                     Must contain one uppercase letter, one digit, one special
                     character.
                   </p>
                 </div>
                 <div>
-                  <label for="confirm-pswrd"
+                  <label for="confirm-pswrd" class="password-container"
                     >CONFIRM PASSWORD
                     <input
                       type="password"
                       name="confirm-pswrd"
                       id="confirm-pswrd"
                       placeholder="Repeat password"
-                      required
-                  /></label>
+                      required />
+                    <i class="fa-regular fa-eye" id="toggleConfirmPassword"></i
+                  ></label>
                   <p id="confirm-error" class="error-message">
                     Password doesn't match.
                   </p>
@@ -128,7 +139,9 @@
                 </div>
               </div>
 
-              <button type="submit" id="submit-btn">Create Account</button>
+              <button type="submit" class="submit-btn" id="create-account">
+                Create Account
+              </button>
             </form>
             <div class="success-message">
               <i class="fa-solid fa-circle-check"></i>
