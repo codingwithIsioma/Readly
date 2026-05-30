@@ -148,4 +148,5 @@
   font-family: var(--main-font);
   font-weight: 500;
   border-radius: 7px;
+  cursor: pointer;
 }

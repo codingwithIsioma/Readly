@@ -30,8 +30,8 @@ class StreakTracker {
     localStorage.setItem(
       "readly_streak",
       JSON.stringify({
-        readly_streak_count: streakCount,
-        readly_last_visit: lastVisit,
+        streakCount: streakCount,
+        lastVisit: lastVisit,
       }),
     );
   }
