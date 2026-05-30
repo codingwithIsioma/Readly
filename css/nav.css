@@ -78,3 +78,42 @@
   text-underline-offset: 3px;
   cursor: pointer;
 }
+
+/* ====================================== */
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  text-decoration: none;
+  color: var(--muted-text);
+}
+
+.nav-links a:hover {
+  color: var(--primary-text);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+}
+
+.nav-links .active {
+  color: var(--primary-text);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+}
+
+.avatar {
+  background-color: var(--primary-text);
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

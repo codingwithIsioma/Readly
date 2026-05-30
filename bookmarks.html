@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarks - Readly</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+
+    <!-- EXTERNAL STYLESHEETS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="sign-up-nav">
+          <h2 class="logo"><a href="./home.html">Readly</a></h2>
+          <div class="nav-links">
+            <a href="./home.html">Home</a>
+            <a href="./bookmarks.html" class="active">Bookmarks</a>
+            <a href="./search.html">Search</a>
+            <a href="./profile.html">Profile</a>
+          </div>
+          <div class="avatar" id="avatar">AK</div>
+        </nav>
+      </header>
+      <main>
+        <div class="bookmark-header">
+          <h3 class="bookmark-heading">Bookmarks</h3>
+          <p class="bookmark-subtext">
+            <span id="bookmark-count">2</span> saved articles
+          </p>
+        </div>
+        <div class="bookmarks">
+          <div class="bookmark-item">
+            <p class="bookmark-category">DESIGN</p>
+            <h4 class="bookmark-title">
+              Why the best interfaces feel invisible
+            </h4>
+            <p class="bookmark-meta">8 min read · Lena Taylor</p>
+            <button type="button" class="remove-bookmark">
+              Remove bookmark
+            </button>
+          </div>
+          <div class="bookmark-item">
+            <p class="bookmark-category">PHILOSOPHY</p>
+            <h4 class="bookmark-title">
+              What does it mean to truly pay attention?
+            </h4>
+            <p class="bookmark-meta">4 min read · Daniella Evans</p>
+            <button type="button" class="remove-bookmark">
+              Remove bookmark
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
