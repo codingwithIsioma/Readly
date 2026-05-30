@@ -1,5 +1,5 @@
 class StreakTracker {
-  constructor(streakCount, lastVisit) {
+  constructor({ streakCount, lastVisit }) {
     this.streakCount = streakCount;
     this.lastVisit = lastVisit;
   }
@@ -38,5 +38,6 @@ class StreakTracker {
 
   static loadFromLocalStorage() {
     const getStreakCount = JSON.parse(localStorage.getItem("readly_streak"));
+    return getStreakCount;
   }
 }

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search - Readly</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+
+    <!-- EXTERNAL STYLESHEETS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6a9f6daa92.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="sign-up-nav">
+          <h2 class="logo"><a href="./home.html">Readly</a></h2>
+          <div class="nav-links">
+            <a href="./home.html">Home</a>
+            <a href="./bookmarks.html">Bookmarks</a>
+            <a href="./search.html" class="active">Search</a>
+            <a href="./profile.html">Profile</a>
+          </div>
+          <div class="avatar" id="avatar">AK</div>
+        </nav>
+      </header>
+      <main>
+        <div class="search-header">
+          <div class="search-form">
+            <label for="search">
+              SEARCH
+              <input type="text" name="search" id="search" />
+            </label>
+          </div>
+          <p>
+            <span class="result-length">1</span> result for
+            <span class="search-param">"invisible"</span>
+          </p>
+          <!-- <p class="no-result">
+            No articles found for <span class="search-param">"invisible"</span>
+          </p> -->
+        </div>
+        <div class="result">
+          <div class="result-container">
+            <p class="result-tag">RESULTS</p>
+            <div class="result-item">
+              <div class="article">
+                <span class="article-num">01</span>
+                <div class="article-body">
+                  <p class="article-tag">DESIGN</p>
+                  <p class="article-title">
+                    Why the best interfaces feel invisible
+                  </p>
+                  <p class="article-excerpt">
+                    Great design isn't about what you add — it's about what you
+                    leave out. A look at the principles behind the world's most
+                    effortless products.
+                  </p>
+                  <span class="article-meta">6 min read · Tom Forde</span>
+                </div>
+              </div>
+              <div class="bookmark-article">
+                <i class="fa-regular fa-bookmark"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+.profile-section {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-text);
+  color: var(--primary-surface);
+  font-size: 1.2rem;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.profile-email {
+  color: var(--muted-text);
+  font-size: 0.8rem;
+  margin-bottom: 0.15rem;
+}
+
+.joined {
+  color: var(--muted-text);
+  font-size: 0.75rem;
+}
+
+.sign-out {
+  color: var(--primary-text);
+  background-color: var(--page-background);
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.sign-out:hover {
+  border: 1px solid var(--primary-text);
+}
+
+/* ===================== */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  background-color: var(--primary-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stat-tag {
+  font-size: 0.7rem;
+  color: var(--muted-text);
+  letter-spacing: 1px;
+}
+
+/* ============================== */
+
+.favorite-topics-section {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.favorite-topics-section p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.favorite-topics {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.favorite-topic {
+  background-color: var(--primary-text);
+  color: var(--primary-surface);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* ================================== */
+
+.account {
+  margin: 1.5rem 0;
+}
+
+.account p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.delete-account {
+  background: none;
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-family: var(--main-font);
+  font-weight: 500;
+  border-radius: 7px;
+}

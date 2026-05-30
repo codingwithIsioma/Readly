@@ -1,0 +1,241 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========= Hero Section =========== */
+
+.hero-section {
+  padding: 1.5rem 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-greeting {
+  animation: fadeUp 0.6s ease both;
+}
+
+.greeting {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted-text);
+  letter-spacing: 1px;
+  margin: 1rem 0 1rem;
+  text-transform: uppercase;
+}
+
+.hero-text {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  max-width: 600px;
+}
+
+.hero-text span {
+  font-style: italic;
+  color: var(--muted-text);
+  font-weight: 500;
+}
+
+.hero-subtext {
+  color: var(--muted-text);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  max-width: 480px;
+}
+
+/* =========================================== */
+
+.pills {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 1rem 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pills button {
+  background-color: var(--primary-surface);
+  color: var(--muted-text);
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.pills button:hover {
+  background-color: var(--primary-text);
+  border: 1px solid var(--primary-text);
+  color: var(--primary-surface);
+}
+
+.pills .active-pill {
+  background-color: var(--primary-text);
+  border: 1px solid var(--primary-text);
+  color: var(--primary-surface);
+}
+
+/* TOP PICKS SECTION */
+
+.main-section {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  padding: 0 4rem;
+}
+
+.article-section {
+  margin: 0;
+  padding-right: 3rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.section-heading {
+  color: var(--muted-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 1.5rem 0;
+}
+
+.main-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.article:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.article:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.article:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.article-num {
+  color: var(--muted-text);
+  font-size: 0.72rem;
+}
+
+.article-body {
+  margin-bottom: 1.5rem;
+}
+
+.article-tag {
+  color: var(--muted-text);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 0.5rem;
+}
+
+.article-title {
+  font-family: var(--secondary-font);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.article-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-excerpt {
+  color: var(--muted-text);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.article-meta {
+  color: var(--very-muted-text);
+  font-size: 0.65rem;
+}
+
+.bookmark-article i {
+  color: var(--muted-text);
+  margin: 2rem 1rem;
+  background-color: var(--primary-surface);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* BROWSE TOPICS SECTION */
+.browse-content {
+  margin-left: 2rem;
+}
+
+.topic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.topic:hover .topic-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.topic-count {
+  color: var(--muted-text);
+  font-size: 0.72rem;
+}
+
+/* STREAK COUNT */
+
+.streak-count {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--primary-text);
+  color: var(--muted-text);
+  border-radius: 10px;
+}
+
+.streak-count .reading-streak {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.streak-count .days {
+  font-size: 1.6rem;
+  color: var(--primary-surface);
+  font-family: var(--secondary-font);
+}
+
+.streak-count .streak-subtext {
+  font-size: 0.62rem;
+}
