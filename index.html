@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/landing.css" />
 
+    <!-- EXTERNAL STYLESHEETS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- SCRIPTS -->
+    <script src="./js/classes/User.js" defer></script>
+    <script src="./js/signin.js" defer></script>
+    <script src="./js/signup.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -22,8 +28,12 @@
         <nav class="landing-nav">
           <h2 class="logo"><a href="./index.html">Readly</a></h2>
           <div class="landing-auth">
-            <button type="button" class="sign-in-btn">Sign in</button>
-            <button type="button" class="sign-up-btn">Get started</button>
+            <button type="button" class="sign-in-btn sign-in-auth">
+              Sign in
+            </button>
+            <button type="button" class="sign-up-btn sign-up-auth">
+              Get started
+            </button>
           </div>
         </nav>
       </header>
@@ -43,14 +53,16 @@
                 </p>
               </div>
               <div class="hero-auth">
-                <button type="button" class="sign-up-btn">
+                <button type="button" class="sign-up-btn sign-up-auth">
                   Create free account
                 </button>
-                <button type="button" class="sign-in-btn">Sign in</button>
+                <button type="button" class="sign-in-btn sign-in-auth">
+                  Sign in
+                </button>
               </div>
               <p class="auth-link">
                 Already have an account?
-                <a href="./signup.html">Sign in here.</a>
+                <button class="sign-in-auth">Sign in here.</button>
               </p>
             </div>
             <div class="landing-preview">

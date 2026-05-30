@@ -29,9 +29,11 @@
 }
 
 .sign-in-btn {
+  color: var(--primary-text);
   background-color: var(--page-background);
   font-family: var(--primary-font);
   font-weight: 500;
+  font-size: 0.85rem;
   padding: 0.5rem 1.3rem;
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -43,14 +45,15 @@
 }
 
 .sign-up-btn {
-  color: #fff;
   background-color: var(--primary-text);
   font-family: var(--primary-font);
   font-weight: 500;
+  font-size: 0.85rem;
   padding: 0.5rem 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: #fff;
 }
 
 .sign-up-btn:hover {
@@ -66,8 +69,12 @@
   word-spacing: 0.5px;
 }
 
-.auth-link a {
+.auth-link button {
+  border: none;
+  background: none;
   color: var(--primary-text);
   font-weight: 500;
+  text-decoration: underline;
   text-underline-offset: 3px;
+  cursor: pointer;
 }
