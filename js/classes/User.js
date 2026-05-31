@@ -25,7 +25,29 @@ class User {
         : hour < 17
           ? "GOOD AFTERNOON"
           : "GOOD EVENING";
-    return timeOfDay;
+    const greeting = `${timeOfDay}, ${this.name}`;
+    return greeting;
+  }
+
+  getMemberSince() {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const month = new Date(this.joinedAt).getMonth();
+    const year = new Date(this.joinedAt).getFullYear();
+    const joined = `${months[month]} ${year}`;
+    return joined;
   }
 
   saveToLocalStorage() {
@@ -42,5 +64,9 @@ class User {
   static loadFromLocalStorage() {
     const returningUser = JSON.parse(localStorage.getItem("readly_user"));
     return returningUser;
+  }
+
+  static removeFromLocalStorage() {
+    localStorage.clear("readly_user");
   }
 }

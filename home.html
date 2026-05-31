@@ -20,6 +20,13 @@
       src="https://kit.fontawesome.com/6a9f6daa92.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- SCRIPTS -->
+    <script src="./js/classes/User.js" defer></script>
+    <script src="./js/classes/StreakTracker.js" defer></script>
+    <script src="./js/classes/ApiService.js" defer></script>
+    <script src="./js/nav.js" defer></script>
+    <script src="./js/home.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -27,7 +34,7 @@
         <nav class="sign-up-nav">
           <h2 class="logo"><a href="./home.html">Readly</a></h2>
           <div class="nav-links">
-            <a href="./home.html" class="active">Home</a>
+            <a href="./home.html">Home</a>
             <a href="./bookmarks.html">Bookmarks</a>
             <a href="./search.html">Search</a>
             <a href="./profile.html">Profile</a>
@@ -57,63 +64,25 @@
         <div class="main-section">
           <div class="article-section">
             <h4 class="section-heading">TOP PICKS FOR YOU</h4>
-            <div class="main-article">
-              <div class="article">
-                <span class="article-num">01</span>
-                <div class="article-body">
-                  <p class="article-tag">DESIGN</p>
-                  <p class="article-title">
-                    Why the best interfaces feel invisible
-                  </p>
-                  <p class="article-excerpt">
-                    Great design isn't about what you add — it's about what you
-                    leave out. A look at the principles behind the world's most
-                    effortless products.
-                  </p>
-                  <span class="article-meta">6 min read · Tom Forde</span>
+            <div class="article-section-container">
+              <!-- <div class="main-article">
+                <div class="article">
+                  <span class="article-num">02</span>
+                  <div class="article-body">
+                    <p class="article-tag">CULTURE</p>
+                    <p class="article-title">On slowness as a radical act</p>
+                    <p class="article-excerpt">
+                      In a world optimised for speed, choosing to go slow has
+                      become one of the most countercultural things a person can
+                      do.
+                    </p>
+                    <span class="article-meta">8 min read · Lena Taylor</span>
+                  </div>
                 </div>
-              </div>
-              <div class="bookmark-article">
-                <i class="fa-regular fa-bookmark"></i>
-              </div>
-            </div>
-
-            <div class="main-article">
-              <div class="article">
-                <span class="article-num">02</span>
-                <div class="article-body">
-                  <p class="article-tag">CULTURE</p>
-                  <p class="article-title">On slowness as a radical act</p>
-                  <p class="article-excerpt">
-                    In a world optimised for speed, choosing to go slow has
-                    become one of the most countercultural things a person can
-                    do.
-                  </p>
-                  <span class="article-meta">8 min read · Lena Taylor</span>
+                <div class="bookmark-article">
+                  <i class="fa-regular fa-bookmark"></i>
                 </div>
-              </div>
-              <div class="bookmark-article">
-                <i class="fa-regular fa-bookmark"></i>
-              </div>
-            </div>
-
-            <div class="main-article">
-              <div class="article">
-                <span class="article-num">03</span>
-                <div class="article-body">
-                  <p class="article-tag">TECHNOLOGY</p>
-                  <p class="article-title">The quiet return of the open web</p>
-                  <p class="article-excerpt">
-                    Amid the noise of social platforms and algorithmic feeds, a
-                    growing number of writers and readers are finding their way
-                    back to the personal web.
-                  </p>
-                  <span class="article-meta">4 min read · Jack Grealish</span>
-                </div>
-              </div>
-              <div class="bookmark-article">
-                <i class="fa-regular fa-bookmark"></i>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -143,7 +112,7 @@
 
             <div class="streak-count">
               <p class="reading-streak">READING STREAK</p>
-              <p class="days">7</p>
+              <p class="days" id="streak">7</p>
               <p class="streak-subtext">days in a row 🔥</p>
             </div>
           </aside>
