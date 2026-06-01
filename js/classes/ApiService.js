@@ -1,8 +1,10 @@
 class ApiService {
   async fetchArticles(topic) {
     const baseUrl = topic
-      ? `https://content.guardianapis.com/search?from-date=2026-04-01&show-fields=body%2Cbyline%2CtrailText&order-by=relevance&q=${topic}&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181`
-      : `https://content.guardianapis.com/search?from-date=2026-04-01&show-fields=body%2Cbyline%2CtrailText&order-by=relevance&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181`;
+      ? `https://content.guardianapis.com/search?from-date=2026-05-01&show-fields=body%2Cbyline%2CtrailText&order-by=newest&q=${topic}&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
+`
+      : `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&use-date=published&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
+`;
 
     const response = await fetch(baseUrl);
     const data = await response.json();
@@ -19,7 +21,7 @@ class ApiService {
       title: rawArticle.webTitle,
       topic: rawArticle.sectionName,
       author: rawArticle.fields.byline,
-      readTime: Math.round(rawArticle.fields.body.length / 200),
+      readTime: Math.round(rawArticle.fields.body.length / 400),
       excerpt: rawArticle.fields.trailText,
       body: rawArticle.fields.body,
     };
@@ -36,7 +38,7 @@ class ApiService {
       title: articleData.webTitle,
       topic: articleData.sectionName,
       author: articleData.fields.byline,
-      readTime: Math.round(articleData.fields.body.length / 200),
+      readTime: Math.round(articleData.fields.body.length / 400),
       excerpt: articleData.fields.trailText,
       body: articleData.fields.body,
     };
@@ -53,3 +55,6 @@ class ApiService {
     }
   }
 }
+
+
+// `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&order-by=newest&use-date=published&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
