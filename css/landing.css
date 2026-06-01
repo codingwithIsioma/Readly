@@ -65,15 +65,6 @@
 
 /* =========================================== */
 
-@keyframes enlarge {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.01);
-  }
-}
-
 .landing-preview {
   padding: 0 4rem;
   background-color: var(--secondary-surface);
@@ -94,10 +85,6 @@
   padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-}
-
-.preview-body:hover {
-  animation: enlarge 0.3s ease-in-out forwards;
 }
 
 .article-tag {

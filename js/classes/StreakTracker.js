@@ -9,6 +9,7 @@ class StreakTracker {
 
     if (this.lastVisit === newVisitToString) {
       // same day
+      console.log("same day");
       return;
     }
 
@@ -20,9 +21,11 @@ class StreakTracker {
     if (newVisitToString === nextDayFromLastVisitString) {
       this.streakCount++;
       this.saveToLocalStorage(this.streakCount, newVisitToString);
+      console.log("new day");
     } else {
       this.streakCount = 1;
       this.saveToLocalStorage(this.streakCount, newVisitToString);
+      console.log("skipped day");
     }
   }
 
@@ -39,5 +42,9 @@ class StreakTracker {
   static loadFromLocalStorage() {
     const getStreakCount = JSON.parse(localStorage.getItem("readly_streak"));
     return getStreakCount;
+  }
+
+  static removeFromLocalStorage() {
+    localStorage.clear("readly_streak");
   }
 }
