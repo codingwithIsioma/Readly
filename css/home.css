@@ -73,9 +73,16 @@
   font-family: var(--main-font);
   font-size: 0.75rem;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .pills button:hover {
+  background-color: var(--primary-text);
+  border: 1px solid var(--primary-text);
+  color: var(--primary-surface);
+}
+
+.pills button:nth-child(1) {
   background-color: var(--primary-text);
   border: 1px solid var(--primary-text);
   color: var(--primary-surface);
@@ -109,6 +116,15 @@
   margin: 1.5rem 0;
 }
 
+.article-section-container {
+  height: 480px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 .main-article {
   display: flex;
   justify-content: space-between;
@@ -118,18 +134,13 @@
   padding-left: 1rem;
 }
 
-.main-article:hover {
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-}
-
 .article {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   gap: 1.5rem;
   margin-top: 1.5rem;
-  animation: fadeUp 0.2s ease both;
+  animation: fadeUp 0.1s ease both;
 }
 
 .article:nth-child(2) {
