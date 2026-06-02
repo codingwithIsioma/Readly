@@ -56,5 +56,4 @@ class ApiService {
   }
 }
 
-
 // `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&order-by=newest&use-date=published&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
