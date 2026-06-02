@@ -91,6 +91,8 @@ topicsContainer.innerHTML = `
   </div>
 `;
 
+let articleHTML = "";
+
 (async () => {
   const getArticles = new ApiService();
   allArticles = await getArticles.fetchWithFallback();
@@ -106,31 +108,13 @@ topicsContainer.innerHTML = `
     .slice(0, 14)
     .sort()
     .forEach((topic) => {
-      pillsHTML += `<button type="button" class="article-pill">${topic}</button>`;
+      pillsHTML += `<button type="button" class="article-pill" onclick=filterArticle("${topic.toLowerCase().split(" ").join("-")}")>${topic}</button>`;
     });
   pillsContainer.innerHTML = pillsHTML;
 
   // RENDER ARTICLE LIST TO TOP PICKS
-  let articleHTML = "";
   allArticles.slice(0, 20).forEach((article, index) => {
-    articleHTML += `<div class="main-article" id="${article.id}">
-                        <div class="article">
-                        <span class="article-num">${String(index + 1).padStart(2, "0")}</span>
-                        <div class="article-body">
-                            <p class="article-tag">${article.topic}</p>
-                            <p class="article-title" onclick=displayArticle("${article.id}")>
-                            ${article.title}
-                            </p>
-                            <p class="article-excerpt">
-                            ${article.excerpt}
-                            </p>
-                            <span class="article-meta">${article.readTime} min read · ${article.author}</span>
-                        </div>
-                        </div>
-                        <div class="bookmark-article">
-                        <i class="fa-regular fa-bookmark"></i>
-                        </div>
-                    </div>`;
+    articleHTML = Article.render(article, index, articleHTML);
   });
   articleContainer.innerHTML = articleHTML;
 
@@ -150,8 +134,44 @@ topicsContainer.innerHTML = `
     `;
   });
   topicsContainer.innerHTML = topicsHTML;
+
+  // ......on load active pill should be "all"
+  const articlePill = document.querySelectorAll(".article-pill");
+  articlePill.forEach((pill) => {
+    if (pill.textContent.toLowerCase() === "all") {
+      pill.classList.add("active-pill");
+    }
+  });
 })();
 
 const displayArticle = (articleID) => {
   window.location.href = `./article.html?id=${articleID}`;
+};
+
+// RENDER LIST BASED ON FILTER PILL
+const filterArticle = (topic) => {
+  const articlePill = document.querySelectorAll(".article-pill");
+  articlePill.forEach((pill) => {
+    if (pill.textContent.toLowerCase() === topic.split("-").join(" ")) {
+      pill.classList.add("active-pill");
+    } else {
+      pill.classList.remove("active-pill");
+    }
+  });
+  if (topic === "all") {
+    let allContainer = "";
+    allArticles.slice(0, 20).forEach((article, index) => {
+      allContainer = Article.render(article, index, allContainer);
+    });
+    articleContainer.innerHTML = allContainer;
+  } else {
+    const filteredArr = allArticles.filter((article) => {
+      return article.topic.toLowerCase() === topic.split("-").join(" ");
+    });
+    let filteredHTML = "";
+    filteredArr.slice(0, 20).forEach((article, index) => {
+      filteredHTML = Article.render(article, index, filteredHTML);
+    });
+    articleContainer.innerHTML = filteredHTML;
+  }
 };

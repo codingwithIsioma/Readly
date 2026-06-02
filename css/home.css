@@ -64,7 +64,7 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.pills button {
+.article-pill {
   background-color: var(--primary-surface);
   color: var(--muted-text);
   padding: 0.4rem 1rem;
@@ -76,19 +76,19 @@
   text-transform: capitalize;
 }
 
-.pills button:hover {
+.article-pill:hover {
   background-color: var(--primary-text);
   border: 1px solid var(--primary-text);
   color: var(--primary-surface);
 }
 
-.pills button:nth-child(1) {
+/* .pills button:nth-child(1) {
   background-color: var(--primary-text);
   border: 1px solid var(--primary-text);
   color: var(--primary-surface);
-}
+} */
 
-.pills .active-pill {
+.active-pill {
   background-color: var(--primary-text);
   border: 1px solid var(--primary-text);
   color: var(--primary-surface);

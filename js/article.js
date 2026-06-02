@@ -13,6 +13,7 @@ userStreak.checkStreakCount(new Date());
 const backToFeed = document.querySelector(".back-to-feed");
 const specificArticleContainer = document.querySelector(".article-container");
 const firstLetter = document.querySelector(".article-body");
+const pageTitle = document.querySelector(".page-title");
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -47,7 +48,7 @@ specificArticleContainer.innerHTML = `
   const getSpecificArticle = new ApiService();
   const specificArticle =
     await getSpecificArticle.fetchArticleById(specificArticleID);
-  console.log(specificArticle);
+  pageTitle.textContent = specificArticle.title;
   specificArticleContainer.innerHTML = `
       <div class="article-details">
           <div>
