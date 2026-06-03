@@ -3,7 +3,7 @@ class ApiService {
     const baseUrl = topic
       ? `https://content.guardianapis.com/search?from-date=2026-05-01&show-fields=body%2Cbyline%2CtrailText&order-by=newest&q=${topic}&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
 `
-      : `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&use-date=published&page-size=150&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
+      : `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&use-date=published&page-size=200&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
 `;
 
     const response = await fetch(baseUrl);

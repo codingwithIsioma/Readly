@@ -105,7 +105,7 @@ let articleHTML = "";
   uniqueArticleTopic.unshift("All");
   let pillsHTML = "";
   uniqueArticleTopic
-    .slice(0, 14)
+    .slice(0, 40)
     .sort()
     .forEach((topic) => {
       pillsHTML += `<button type="button" class="article-pill" onclick=filterArticle("${topic.toLowerCase().split(" ").join("-")}")>${topic}</button>`;

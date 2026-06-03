@@ -61,6 +61,8 @@
   flex-direction: row;
   gap: 0.5rem;
   padding: 1rem 4rem;
+  overflow: hidden;
+  overflow-x: scroll;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -74,6 +76,8 @@
   font-size: 0.75rem;
   cursor: pointer;
   text-transform: capitalize;
+  min-width: fit-content;
+  max-height: min-content;
 }
 
 .article-pill:hover {
@@ -81,12 +85,6 @@
   border: 1px solid var(--primary-text);
   color: var(--primary-surface);
 }
-
-/* .pills button:nth-child(1) {
-  background-color: var(--primary-text);
-  border: 1px solid var(--primary-text);
-  color: var(--primary-surface);
-} */
 
 .active-pill {
   background-color: var(--primary-text);
@@ -121,8 +119,22 @@
   overflow-y: scroll;
 }
 
+/* width */
 ::-webkit-scrollbar {
-  display: none;
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--page-background);
+  cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  cursor: pointer;
 }
 
 .main-article {
