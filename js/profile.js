@@ -16,11 +16,17 @@ const profileName = document.querySelector(".profile-name");
 const profileEmail = document.querySelector(".profile-email");
 const joinedBy = document.getElementById("joinedBy");
 const streakCount = document.getElementById("streak-count");
+const articlesReadCount = document.getElementById("articles-read");
+const bookmarksCount = document.getElementById("bookmarks-count");
+const favoriteTopics = document.querySelector(".favorite-topics");
 const signOut = document.getElementById("sign-out");
 const deleteAccount = document.getElementById("delete-account");
 const deleteModal = document.querySelector(".modal-overlay");
 const cancelDelete = document.getElementById("cancel-delete");
 const confirmDelete = document.getElementById("confirm-delete");
+
+const retrieveArticlesRead = Article.loadCountFromLocalStorage();
+const retrieveTopicsCount = TopicTracker.loadFromLocalStorage();
 
 // update profile details
 profileAvatar.textContent = userDetails.getInitials();
@@ -30,9 +36,21 @@ joinedBy.textContent = userDetails.getMemberSince();
 
 // update stats details
 streakCount.textContent = retrieveStreak.streakCount;
+articlesReadCount.textContent = retrieveArticlesRead.articlesRead;
 
 // update favorite topics
-// ...
+const topicsCount = new TopicTracker(retrieveTopicsCount);
+const favoriteTopicsArray = topicsCount.getTopN(4);
+let favoriteTopicsHTML = "";
+if (favoriteTopicsArray.length > 0) {
+  favoriteTopics.innerHTML = "";
+  favoriteTopicsArray.forEach((topic) => {
+    favoriteTopicsHTML += `
+    <div class="favorite-topic">${topic[0]}</div>
+  `;
+  });
+  favoriteTopics.innerHTML = favoriteTopicsHTML;
+}
 
 // handle sign out and delete account
 // sign out

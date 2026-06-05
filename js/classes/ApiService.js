@@ -5,14 +5,17 @@ class ApiService {
 `
       : `https://content.guardianapis.com/search?show-fields=body%2Cbyline%2CtrailText&use-date=published&page-size=200&api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181
 `;
-
-    const response = await fetch(baseUrl);
-    const data = await response.json();
-    const articleData = data.response.results;
-    const newArticleArray = articleData.map((article) => {
-      return this.#transformArticle(article);
-    });
-    return newArticleArray;
+    try {
+      const response = await fetch(baseUrl);
+      const data = await response.json();
+      const articleData = data.response.results;
+      const newArticleArray = articleData.map((article) => {
+        return this.#transformArticle(article);
+      });
+      return newArticleArray;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   #transformArticle(rawArticle) {
@@ -29,20 +32,24 @@ class ApiService {
   }
 
   async fetchArticleById(id) {
-    const baseUrl = `https://content.guardianapis.com/${id}?api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181&show-fields=body,byline,trailText`;
-    const response = await fetch(baseUrl);
-    const data = await response.json();
-    const articleData = data.response.content;
-    const articleDataObj = {
-      id: articleData.id,
-      title: articleData.webTitle,
-      topic: articleData.sectionName,
-      author: articleData.fields.byline,
-      readTime: Math.round(articleData.fields.body.length / 400),
-      excerpt: articleData.fields.trailText,
-      body: articleData.fields.body,
-    };
-    return articleDataObj;
+    try {
+      const baseUrl = `https://content.guardianapis.com/${id}?api-key=09a809bc-ce21-469e-a00e-d4f1ceb6f181&show-fields=body,byline,trailText`;
+      const response = await fetch(baseUrl);
+      const data = await response.json();
+      const articleData = data.response.content;
+      const articleDataObj = {
+        id: articleData.id,
+        title: articleData.webTitle,
+        topic: articleData.sectionName,
+        author: articleData.fields.byline,
+        readTime: Math.round(articleData.fields.body.length / 400),
+        excerpt: articleData.fields.trailText,
+        body: articleData.fields.body,
+      };
+      return articleDataObj;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   async fetchWithFallback(topic) {
