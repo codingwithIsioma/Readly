@@ -11,6 +11,9 @@ userStreak.checkStreakCount(new Date());
 
 // EVERYTHING ELSE....
 const userDetails = new User(retrieveUser);
+const retrieveBookmarks = BookmarkManager.loadBookmarksFromLocalStorage();
+const newBookmark = new BookmarkManager(retrieveBookmarks);
+
 const greetingText = document.getElementById("greetingText");
 const streakCount = document.getElementById("streak");
 const articleContainer = document.querySelector(".article-section-container");
@@ -142,11 +145,34 @@ let articleHTML = "";
       pill.classList.add("active-pill");
     }
   });
-})();
 
-const displayArticle = (articleID) => {
-  window.location.href = `./article.html?id=${articleID}`;
-};
+  // SHOW BOOKMARKED ARTICLES ON RENDER
+  const articleContainerChildren = [...articleContainer.children];
+  articleContainerChildren.forEach((child) => {
+    if (newBookmark.hasBookmark(child.attributes.id.value)) {
+      const bookmarkIcon = child.lastElementChild.children[0];
+      bookmarkIcon.className = "fa-solid fa-bookmark bookmarkBtn";
+    }
+  });
+
+  // bookmark functionality
+  articleContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("bookmarkBtn")) {
+      const articleID = e.target.attributes.id.value;
+      const isBookmarked = newBookmark.hasBookmark(articleID);
+      if (isBookmarked) {
+        newBookmark.removeBookmark(articleID);
+        e.target.className = "fa-regular fa-bookmark bookmarkBtn";
+      } else {
+        const findArticle = allArticles.filter(
+          (article) => article.id === articleID,
+        );
+        newBookmark.addBookmark(findArticle[0]);
+        e.target.className = "fa-solid fa-bookmark bookmarkBtn";
+      }
+    }
+  });
+})();
 
 // RENDER LIST BASED ON FILTER PILL
 const filterArticle = (topic) => {
@@ -164,6 +190,14 @@ const filterArticle = (topic) => {
       allContainer = Article.render(article, index, allContainer);
     });
     articleContainer.innerHTML = allContainer;
+    // SHOW BOOKMARKED ARTICLES ON RENDER
+    const articleContainerChildren = [...articleContainer.children];
+    articleContainerChildren.forEach((child) => {
+      if (newBookmark.hasBookmark(child.attributes.id.value)) {
+        const bookmarkIcon = child.lastElementChild.children[0];
+        bookmarkIcon.className = "fa-solid fa-bookmark bookmarkBtn";
+      }
+    });
   } else {
     const filteredArr = allArticles.filter((article) => {
       return article.topic.toLowerCase() === topic.split("-").join(" ");
@@ -173,5 +207,18 @@ const filterArticle = (topic) => {
       filteredHTML = Article.render(article, index, filteredHTML);
     });
     articleContainer.innerHTML = filteredHTML;
+    // SHOW BOOKMARKED ARTICLES ON RENDER
+    const articleContainerChildren = [...articleContainer.children];
+    articleContainerChildren.forEach((child) => {
+      if (newBookmark.hasBookmark(child.attributes.id.value)) {
+        const bookmarkIcon = child.lastElementChild.children[0];
+        bookmarkIcon.className = "fa-solid fa-bookmark bookmarkBtn";
+      }
+    });
   }
+};
+
+// redirect to full article page
+const displayArticle = (articleID) => {
+  window.location.href = `./article.html?id=${articleID}`;
 };

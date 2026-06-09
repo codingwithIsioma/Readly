@@ -24,6 +24,9 @@
     <!-- SCRIPTS -->
     <script src="./js/classes/User.js" defer></script>
     <script src="./js/classes/StreakTracker.js" defer></script>
+    <script src="./js/classes/Article.js" defer></script>
+    <script src="./js/classes/TopicTracker.js" defer></script>
+    <script src="./js/classes/BookmarkManager.js" defer></script>
     <script src="./js/nav.js" defer></script>
     <script src="./js/profile.js" defer></script>
   </head>
@@ -38,20 +41,18 @@
             <a href="./search.html">Search</a>
             <a href="./profile.html">Profile</a>
           </div>
-          <div class="avatar" id="avatar">AK</div>
+          <div class="avatar" id="avatar"></div>
         </nav>
       </header>
       <main>
         <div class="profile-section">
           <div class="profile-details">
             <div class="profile">
-              <div class="profile-avatar">AK</div>
+              <div class="profile-avatar"></div>
               <div class="profile-meta">
-                <h3 class="profile-name">Anna Krause</h3>
-                <p class="profile-email">annakrause@gmail.com</p>
-                <p class="joined">
-                  Member since <span id="joinedBy">April 2026</span>
-                </p>
+                <h3 class="profile-name"></h3>
+                <p class="profile-email"></p>
+                <p class="joined">Member since <span id="joinedBy"></span></p>
               </div>
             </div>
             <button type="button" class="sign-out" id="sign-out">
@@ -61,15 +62,15 @@
 
           <div class="stats">
             <div class="stat-item">
-              <p class="stat-value" id="articles-read">12</p>
+              <p class="stat-value" id="articles-read">-</p>
               <p class="stat-tag">ARTICLES READ</p>
             </div>
             <div class="stat-item">
-              <p class="stat-value" id="bookmarks-count">2</p>
+              <p class="stat-value" id="bookmarks-count">-</p>
               <p class="stat-tag">BOOKMARKS</p>
             </div>
             <div class="stat-item">
-              <p class="stat-value" id="streak-count">7</p>
+              <p class="stat-value" id="streak-count">-</p>
               <p class="stat-tag">DAY STREAK</p>
             </div>
           </div>
@@ -77,9 +78,7 @@
           <div class="favorite-topics-section">
             <p>YOUR FAVOURITE TOPICS</p>
             <div class="favorite-topics">
-              <div class="favorite-topic">Design</div>
-              <div class="favorite-topic">Philosophy</div>
-              <div class="favorite-topic">Technology</div>
+              <p class="no-favorite-topics">You should read more!</p>
             </div>
           </div>
 

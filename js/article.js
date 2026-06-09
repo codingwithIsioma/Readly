@@ -18,6 +18,9 @@ const pageTitle = document.querySelector(".page-title");
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const specificArticleID = urlParams.get("id");
+const getTopicsCount = TopicTracker.loadFromLocalStorage();
+const getArticlesRead = Article.loadCountFromLocalStorage();
+let articlesRead = getArticlesRead ? getArticlesRead.articlesRead : 0;
 
 specificArticleContainer.innerHTML = `
         <div class="skeleton-article-details">
@@ -49,36 +52,17 @@ specificArticleContainer.innerHTML = `
   const specificArticle =
     await getSpecificArticle.fetchArticleById(specificArticleID);
   pageTitle.textContent = specificArticle.title;
-  specificArticleContainer.innerHTML = `
-      <div class="article-details">
-          <div>
-              <p class="article-category">${specificArticle.topic}</p>
-              <p class="article-title">
-                  ${specificArticle.title}
-              </p>
-              <div class="article-meta">
-                  <div class="author-initials">${specificArticle.author
-                    .split(" ")
-                    .map((w) => w[0])
-                    .join("")
-                    .toUpperCase()
-                    .slice(0, 2)}</div>
-                  <div>
-                      <p class="author">${specificArticle.author}</p>
-                      <p class="read-time">${specificArticle.readTime} min read</p>
-                  </div>
-              </div>
-          </div>
-          <div class="bookmark-article" id="${specificArticle.id}">
-              <i class="fa-regular fa-bookmark"></i>
-          </div>
-      </div>
-      <div class="article-body">
-         ${specificArticle.body}
-      </div>
-    `;
+  specificArticleContainer.innerHTML = FeaturedArticle.render(specificArticle);
   const firstLetter = document.querySelector(".article-body p");
   firstLetter.classList.add("drop-cap");
+
+  // increment number of articles read
+  articlesRead += 1;
+  Article.saveCountToLocalStorage(articlesRead);
+
+  // increment number of articles per topic read
+  const newTopicCount = new TopicTracker(getTopicsCount);
+  newTopicCount.increment(specificArticle.topic);
 })();
 
 backToFeed.addEventListener("click", () => {

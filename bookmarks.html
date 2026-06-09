@@ -19,7 +19,11 @@
 
     <!-- SCRIPTS -->
     <script src="./js/classes/User.js" defer></script>
+    <script src="./js/classes/StreakTracker.js" defer></script>
+    <script src="./js/classes/Article.js" defer></script>
+    <script src="./js/classes/BookmarkManager.js" defer></script>
     <script src="./js/nav.js" defer></script>
+    <script src="./js/bookmark.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -32,18 +36,18 @@
             <a href="./search.html">Search</a>
             <a href="./profile.html">Profile</a>
           </div>
-          <div class="avatar" id="avatar">AK</div>
+          <div class="avatar" id="avatar"></div>
         </nav>
       </header>
       <main>
         <div class="bookmark-header">
           <h3 class="bookmark-heading">Bookmarks</h3>
           <p class="bookmark-subtext">
-            <span id="bookmark-count">2</span> saved articles
+            <span id="bookmark-count"></span> saved articles
           </p>
         </div>
         <div class="bookmarks">
-          <div class="bookmark-item">
+          <!-- <div class="bookmark-item">
             <p class="bookmark-category">DESIGN</p>
             <h4 class="bookmark-title">
               Why the best interfaces feel invisible
@@ -62,8 +66,9 @@
             <button type="button" class="remove-bookmark">
               Remove bookmark
             </button>
-          </div>
+          </div> -->
         </div>
+        <div class="no-bookmark">No saved articles yet.</div>
       </main>
     </div>
   </body>
