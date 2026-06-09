@@ -22,4 +22,8 @@ class TopicTracker {
   static loadFromLocalStorage() {
     return JSON.parse(localStorage.getItem("readly_topic_count"));
   }
+
+  static removeFromLocalStorage() {
+    localStorage.clear("readly_topic_count");
+  }
 }

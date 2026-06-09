@@ -57,7 +57,7 @@ specificArticleContainer.innerHTML = `
   firstLetter.classList.add("drop-cap");
 
   // increment number of articles read
-  articlesRead = articlesRead + 1;
+  articlesRead += 1;
   Article.saveCountToLocalStorage(articlesRead);
 
   // increment number of articles per topic read

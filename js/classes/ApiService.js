@@ -7,6 +7,7 @@ class ApiService {
 `;
     try {
       const response = await fetch(baseUrl);
+      if (!response.ok) throw new Error("Something went wrong.");
       const data = await response.json();
       const articleData = data.response.results;
       const newArticleArray = articleData.map((article) => {

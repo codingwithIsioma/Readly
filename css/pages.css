@@ -43,6 +43,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   margin-bottom: 0.25rem;
+  text-transform: uppercase;
 }
 
 .bookmark-title {
@@ -68,6 +69,15 @@
 
 .remove-bookmark:hover {
   color: var(--error-color);
+}
+
+.no-bookmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  display: none;
 }
 
 @media screen and (min-width: 2100px) {

@@ -15,7 +15,7 @@ class Article {
                         </div>
                         </div>
                         <div class="bookmark-article">
-                        <i class="fa-regular fa-bookmark"></i>
+                          <i class="fa-regular fa-bookmark bookmarkBtn" id=${article.id}></i>
                         </div>
                     </div>
   `;
@@ -31,6 +31,10 @@ class Article {
 
   static loadCountFromLocalStorage() {
     return JSON.parse(localStorage.getItem("readly_articles_read"));
+  }
+
+  static removeCountFromLocalStorage() {
+    localStorage.clear("readly_articles_read");
   }
 }
 

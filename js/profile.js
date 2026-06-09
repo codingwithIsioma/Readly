@@ -27,6 +27,7 @@ const confirmDelete = document.getElementById("confirm-delete");
 
 const retrieveArticlesRead = Article.loadCountFromLocalStorage();
 const retrieveTopicsCount = TopicTracker.loadFromLocalStorage();
+const retrieveBookmarksCount = BookmarkManager.loadBookmarksFromLocalStorage();
 
 // update profile details
 profileAvatar.textContent = userDetails.getInitials();
@@ -37,6 +38,8 @@ joinedBy.textContent = userDetails.getMemberSince();
 // update stats details
 streakCount.textContent = retrieveStreak.streakCount;
 articlesReadCount.textContent = retrieveArticlesRead.articlesRead;
+const bookmarkCount = new BookmarkManager(retrieveBookmarksCount);
+bookmarksCount.textContent = bookmarkCount.getBookmarkCount();
 
 // update favorite topics
 const topicsCount = new TopicTracker(retrieveTopicsCount);
@@ -74,6 +77,9 @@ cancelDelete.addEventListener("click", () => {
 confirmDelete.addEventListener("click", () => {
   User.removeFromLocalStorage();
   StreakTracker.removeFromLocalStorage();
+  Article.removeCountFromLocalStorage();
+  TopicTracker.removeFromLocalStorage();
+  BookmarkManager.removeBookmarksFromLocalStorage();
   setTimeout(() => {
     window.location.href = "./index.html";
   }, 1000);
