@@ -23,7 +23,12 @@
 
     <!-- SCRIPTS -->
     <script src="./js/classes/User.js" defer></script>
+    <script src="./js/classes/StreakTracker.js" defer></script>
+    <script src="./js/classes/ApiService.js" defer></script>
+    <script src="./js/classes/Article.js" defer></script>
+    <script src="./js/classes/BookmarkManager.js" defer></script>
     <script src="./js/nav.js" defer></script>
+    <script src="./js/search.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -36,7 +41,7 @@
             <a href="./search.html">Search</a>
             <a href="./profile.html">Profile</a>
           </div>
-          <div class="avatar" id="avatar">AK</div>
+          <div class="avatar" id="avatar"></div>
         </nav>
       </header>
       <main>
@@ -44,39 +49,44 @@
           <div class="search-form">
             <label for="search">
               SEARCH
-              <input type="text" name="search" id="search" />
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search titles, topics, authors..."
+                disabled
+              />
             </label>
           </div>
-          <p>
-            <span class="result-length">1</span> result for
-            <span class="search-param">"invisible"</span>
+          <p class="search-result">
+            <span class="result-length"></span> results for
+            <span class="search-param"></span>
           </p>
-          <!-- <p class="no-result">
-            No articles found for <span class="search-param">"invisible"</span>
-          </p> -->
         </div>
         <div class="result">
           <div class="result-container">
             <p class="result-tag">RESULTS</p>
-            <div class="result-item">
-              <div class="article">
-                <span class="article-num">01</span>
-                <div class="article-body">
-                  <p class="article-tag">DESIGN</p>
-                  <p class="article-title">
-                    Why the best interfaces feel invisible
-                  </p>
-                  <p class="article-excerpt">
-                    Great design isn't about what you add — it's about what you
-                    leave out. A look at the principles behind the world's most
-                    effortless products.
-                  </p>
-                  <span class="article-meta">6 min read · Tom Forde</span>
+            <div class="result-body">
+              <!-- <div class="main-article">
+                <div class="article">
+                  <span class="article-num">01</span>
+                  <div class="article-body">
+                    <p class="article-tag">DESIGN</p>
+                    <p class="article-title">
+                      Why the best interfaces feel invisible
+                    </p>
+                    <p class="article-excerpt">
+                      Great design isn't about what you add — it's about what
+                      you leave out. A look at the principles behind the world's
+                      most effortless products.
+                    </p>
+                    <span class="article-meta">6 min read · Tom Forde</span>
+                  </div>
                 </div>
-              </div>
-              <div class="bookmark-article">
-                <i class="fa-regular fa-bookmark"></i>
-              </div>
+                <div class="bookmark-article">
+                  <i class="fa-regular fa-bookmark"></i>
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
