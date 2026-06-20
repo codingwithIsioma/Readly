@@ -97,6 +97,10 @@
   letter-spacing: 1px;
 }
 
+.mobile-stats {
+  display: none;
+}
+
 /* ============================== */
 
 .favorite-topics-section {
@@ -256,4 +260,48 @@
 
 .modal-btn-confirm:hover {
   background: #c94444;
+}
+
+/* ============== MOBILE DESIGN ========== */
+
+@media screen and (max-width: 768px) {
+  main {
+    margin-top: 4rem;
+    min-height: 0;
+  }
+  .profile-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  .profile-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .profile-email {
+    font-size: 0.7rem;
+  }
+  .joined {
+    font-size: 0.65rem;
+  }
+  .stats {
+    display: none;
+  }
+  .mobile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-tag {
+    font-size: 0.6rem;
+  }
 }

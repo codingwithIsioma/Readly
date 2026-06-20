@@ -223,3 +223,40 @@ input::placeholder {
   color: var(--muted-text);
   font-size: 0.85rem;
 }
+
+/* ============== MOBILE DESIGN ========== */
+
+@media screen and (max-width: 768px) {
+  main {
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
+  }
+  /* BOOKMARKS */
+  .bookmark-header {
+    padding: 0 1.5rem 1rem;
+  }
+  .bookmark-heading {
+    font-size: 1.5rem;
+  }
+  .bookmark-subtext {
+    font-size: 0.7rem;
+  }
+  .bookmarks {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  /* SEARCH */
+  .search-header {
+    padding: 0 1.5rem 1rem;
+  }
+  input {
+    width: 100%;
+  }
+  .result {
+    padding: 1rem 1.5rem;
+  }
+  .bookmark-article i {
+    margin: 2rem 0;
+  }
+}

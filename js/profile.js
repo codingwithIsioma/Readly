@@ -18,6 +18,9 @@ const joinedBy = document.getElementById("joinedBy");
 const streakCount = document.getElementById("streak-count");
 const articlesReadCount = document.getElementById("articles-read");
 const bookmarksCount = document.getElementById("bookmarks-count");
+const mobileStreakCount = document.getElementById("mobile-streak-count");
+const mobileArticlesReadCount = document.getElementById("mobile-articles-read");
+const mobileBookmarksCount = document.getElementById("mobile-bookmarks-count");
 const favoriteTopics = document.querySelector(".favorite-topics");
 const signOut = document.getElementById("sign-out");
 const deleteAccount = document.getElementById("delete-account");
@@ -36,14 +39,17 @@ profileEmail.textContent = userDetails.email;
 joinedBy.textContent = userDetails.getMemberSince();
 
 // update stats details
+const bookmarkCount = new BookmarkManager(retrieveBookmarksCount);
 streakCount.textContent = retrieveStreak.streakCount;
 articlesReadCount.textContent = retrieveArticlesRead.articlesRead;
-const bookmarkCount = new BookmarkManager(retrieveBookmarksCount);
 bookmarksCount.textContent = bookmarkCount.getBookmarkCount();
+mobileStreakCount.textContent = retrieveStreak.streakCount;
+mobileArticlesReadCount.textContent = retrieveArticlesRead.articlesRead;
+mobileBookmarksCount.textContent = bookmarkCount.getBookmarkCount();
 
 // update favorite topics
 const topicsCount = new TopicTracker(retrieveTopicsCount);
-const favoriteTopicsArray = topicsCount.getTopN(4);
+const favoriteTopicsArray = topicsCount.getTopN(3);
 let favoriteTopicsHTML = "";
 if (favoriteTopicsArray.length > 0) {
   favoriteTopics.innerHTML = "";

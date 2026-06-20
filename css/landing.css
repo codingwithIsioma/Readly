@@ -140,3 +140,67 @@
     width: 65%;
   }
 }
+
+/* ============== MOBILE DESIGN ========== */
+
+@media screen and (max-width: 768px) {
+  .main-hero {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .hero-section {
+    border: none;
+    display: block;
+    height: fit-content;
+  }
+  .landing-hero {
+    padding: 0 1.5rem;
+    border-right: none;
+    height: fit-content;
+  }
+  .landing-tag {
+    font-size: 0.7rem;
+    width: 100%;
+    margin: 2rem 0 1rem;
+  }
+  .landing-hero-text h1 {
+    font-size: 2.3rem;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .landing-subtext {
+    color: var(--muted-text);
+    font-size: 0.8rem;
+    width: 100%;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+  }
+  .hero-auth {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .hero-auth .sign-up-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+  .hero-auth .sign-in-btn {
+    display: block;
+    width: 100%;
+    color: var(--primary-text);
+    background: var(--page-background);
+  }
+  .auth-link {
+    display: none;
+  }
+  .landing-preview {
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+    height: fit-content;
+  }
+  .stats {
+    display: none;
+  }
+}

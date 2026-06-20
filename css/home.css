@@ -54,6 +54,10 @@
   max-width: 480px;
 }
 
+.streak-container {
+  display: none;
+}
+
 /* =========================================== */
 
 .pills {
@@ -395,5 +399,85 @@
   .article-section-container {
     height: 800px;
     overflow-y: scroll;
+  }
+}
+
+/* ============== MOBILE DESIGN ========== */
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    margin-top: 3.5rem;
+    padding: 1rem 1.5rem;
+  }
+  .home-main {
+    min-height: 0;
+  }
+  .greeting {
+    font-size: 0.8rem;
+  }
+  .hero-text {
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    margin-bottom: 0;
+  }
+  .hero-subtext {
+    display: none;
+  }
+  .streak-container {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: var(--primary-text);
+    width: fit-content;
+    color: var(--muted-text);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+  .streak-container .days {
+    font-size: 1rem;
+    color: var(--primary-surface);
+    font-family: var(--secondary-font);
+  }
+  .streak-container .streak-subtext {
+    font-size: 0.62rem;
+  }
+  .pills {
+    gap: 0.35rem;
+    padding: 0.7rem 1.5rem;
+  }
+  .main-section {
+    display: block;
+    padding: 0 1.5rem;
+  }
+  .article-section {
+    padding-right: 0;
+    border-right: none;
+  }
+  .section-heading {
+    font-size: 0.65rem;
+    margin: 1rem 0 0.8rem;
+  }
+  .article-section-container {
+    height: 500px;
+  }
+  .main-article {
+    padding-left: 0;
+  }
+  .article-tag {
+    font-size: 0.6rem;
+    margin: 0 0 0.3rem;
+  }
+  .article-title {
+    margin-bottom: 0.3rem;
+  }
+  .bookmark-article i {
+    margin: 2rem 0;
+  }
+  .browse-content {
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }

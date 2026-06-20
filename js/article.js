@@ -20,6 +20,8 @@ const urlParams = new URLSearchParams(queryString);
 const specificArticleID = urlParams.get("id");
 const getTopicsCount = TopicTracker.loadFromLocalStorage();
 const getArticlesRead = Article.loadCountFromLocalStorage();
+const getBookmarks = BookmarkManager.loadBookmarksFromLocalStorage();
+const userBookmarks = new BookmarkManager(getBookmarks);
 let articlesRead = getArticlesRead ? getArticlesRead.articlesRead : 0;
 
 specificArticleContainer.innerHTML = `
@@ -52,7 +54,10 @@ specificArticleContainer.innerHTML = `
   const specificArticle =
     await getSpecificArticle.fetchArticleById(specificArticleID);
   pageTitle.textContent = specificArticle.title;
-  specificArticleContainer.innerHTML = FeaturedArticle.render(specificArticle);
+  specificArticleContainer.innerHTML = FeaturedArticle.render(
+    specificArticle,
+    userBookmarks,
+  );
   const firstLetter = document.querySelector(".article-body p");
   firstLetter.classList.add("drop-cap");
 
