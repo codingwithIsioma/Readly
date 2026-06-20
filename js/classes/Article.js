@@ -39,7 +39,7 @@ class Article {
 }
 
 class FeaturedArticle extends Article {
-  static render(article) {
+  static render(article, bookmarkmanager) {
     let container = `
     <div class="article-details">
           <div>
@@ -65,7 +65,7 @@ class FeaturedArticle extends Article {
               </div>
           </div>
           <div class="bookmark-article" id="${article.id}">
-              <i class="fa-regular fa-bookmark"></i>
+              <i class="${bookmarkmanager.hasBookmark(article.id) ? "fa-solid" : "fa-regular"} fa-bookmark bookmarkBtn"></i>
           </div>
       </div>
       <div class="article-body">

@@ -16,6 +16,7 @@ const newBookmark = new BookmarkManager(retrieveBookmarks);
 
 const greetingText = document.getElementById("greetingText");
 const streakCount = document.getElementById("streak");
+const mobileStreakCount = document.getElementById("mobile-streak");
 const articleContainer = document.querySelector(".article-section-container");
 const pillsContainer = document.querySelector(".pills");
 const topicsContainer = document.querySelector("#topic-content");
@@ -24,6 +25,7 @@ let allArticles = [];
 
 greetingText.textContent = userDetails.getGreeting();
 streakCount.textContent = retrieveStreak.streakCount;
+mobileStreakCount.textContent = retrieveStreak.streakCount;
 
 // show a loading screen before fetched data comes in
 pillsContainer.innerHTML = `

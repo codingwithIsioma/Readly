@@ -106,6 +106,10 @@
   text-decoration-thickness: 1.5px;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .avatar {
   background-color: var(--primary-text);
   width: 35px;
@@ -116,4 +120,61 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* ============== MOBILE DESIGN ========== */
+
+@media screen and (max-width: 768px) {
+  .site-header {
+    padding: 1rem 1.5rem;
+    position: fixed;
+    background-color: var(--page-background);
+    z-index: 100;
+  }
+  .landing-auth .sign-up-btn {
+    display: none;
+  }
+  .sign-in-btn {
+    color: var(--page-background);
+    background-color: var(--primary-text);
+  }
+  .nav-links {
+    display: none;
+  }
+  .page {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--primary-surface);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .nav-item i {
+    color: var(--muted-text);
+    font-size: 1.1rem;
+  }
+  .nav-item a {
+    color: var(--muted-text);
+    text-decoration: none;
+    font-size: 0.7rem;
+  }
+  .nav-item .active-link {
+    color: var(--primary-text);
+  }
 }
